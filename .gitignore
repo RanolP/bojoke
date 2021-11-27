@@ -2,7 +2,7 @@
 dist
 dist-ssr
 *.local
-
+node_modules
 .yarn/*
 !.yarn/cache
 !.yarn/patches
