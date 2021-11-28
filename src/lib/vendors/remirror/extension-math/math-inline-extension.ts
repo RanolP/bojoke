@@ -55,6 +55,6 @@ export class MathInlineExtension extends NodeExtension {
   }
 
   createNodeViews(): NodeViewMethod | Record<string, NodeViewMethod> {
-    return createMathView(false);
+    return createMathView(true);
   }
 }

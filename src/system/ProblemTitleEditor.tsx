@@ -6,7 +6,7 @@ import { MathSelectExtension } from '../lib/vendors/remirror/extension-math/math
 import { css, styled } from '../stitches.config';
 
 const Heading = styled('h1', {
-  margin: 'calc(40px - var(--rmr-space-3)) 0 20px',
+  margin: 'calc(40px - var(--rmr-space-3)) 0 0',
   fontSize: '28px',
   lineHeight: '35px',
 });
@@ -15,7 +15,7 @@ const Editor = css({
   boxShadow: 'none !important',
   overflowY: 'hidden !important',
   display: 'inline-block',
-  minHeight: 'unset',
+  minHeight: 'unset !important',
   '& .math-render': {
     fontSize: '109%',
   },
