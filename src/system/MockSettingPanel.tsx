@@ -17,7 +17,17 @@ export function MockSettingPanel(): JSX.Element {
   return (
     <Wrap>
       <Heading>설정</Heading>
-      <form></form>
+      <form>
+        <div>
+          <label>로그인함</label>
+          <div>
+            <label>문제 해결함</label>
+          </div>
+        </div>
+        <div>
+          <label>디버그 기능 활성화함</label>
+        </div>
+      </form>
     </Wrap>
   );
 }

@@ -1,14 +1,16 @@
 import { mathPlugin, mathSelectPlugin } from '@benrbray/prosemirror-math';
 import { Remirror, useRemirror } from '@remirror/react';
+import { FiEdit3 } from 'react-icons/fi';
 import { PlaceholderExtension } from 'remirror/extensions';
 import { MathInlineExtension } from '../lib/vendors/remirror/extension-math/math-inline-extension';
 import { MathSelectExtension } from '../lib/vendors/remirror/extension-math/math-select-extension';
 import { css, styled } from '../stitches.config';
 
 const Heading = styled('h1', {
-  margin: 'calc(40px - var(--rmr-space-3)) 0 0',
+  margin: 'calc(40px - 2 * var(--rmr-space-3)) 0 0',
   fontSize: '28px',
   lineHeight: '35px',
+  position: 'relative',
 });
 
 const Editor = css({
@@ -16,9 +18,23 @@ const Editor = css({
   overflowY: 'hidden !important',
   display: 'inline-block',
   minHeight: 'unset !important',
+  marginLeft: '-16px',
   '& .math-render': {
     fontSize: '109%',
   },
+});
+
+const EditableIcon = styled(FiEdit3, {
+  position: 'absolute',
+  left: '-16px',
+  top: '35px',
+  transform: 'translate(-100%, 50%)',
+  paddingRight: '4px',
+  borderLeft: 'none',
+  border: '1px solid black',
+  borderImage:
+    'linear-gradient(to right, transparent 75%, black 75%, black 100%) 1',
+  fontSize: '1.2rem',
 });
 
 export function ProblemTitleEditor(): JSX.Element {
@@ -48,13 +64,11 @@ export function ProblemTitleEditor(): JSX.Element {
 
   return (
     <Heading className="remirror-theme">
+      <EditableIcon />
       <Remirror
         classNames={[Editor()]}
         manager={manager}
         initialContent={state}
-        onChange={({ state }) => {
-          console.log(JSON.stringify(state.doc.content));
-        }}
       />
     </Heading>
   );

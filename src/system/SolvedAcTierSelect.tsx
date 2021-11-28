@@ -2,9 +2,9 @@ import { styled } from '../stitches.config';
 
 const Wrap = styled('blockquote', {
   fontSize: '17.5px',
-  padding: '0 15px 5px 15px',
+  padding: '0 15px 15px 15px',
   borderLeft: '2px solid #eee',
-  margin: '0 0 20px',
+  margin: '-16px 0 20px',
   '&:hover': {
     borderLeftColor: '#0076C0',
     transition: 'all 0.4s ease-in-out',

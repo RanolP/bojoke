@@ -62,6 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prosemirror-state", "npm:1.3.4"],
             ["prosemirror-transform", "npm:1.3.3"],
             ["prosemirror-view", "npm:1.23.3"],
+            ["react-icons", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:4.3.1"],
             ["remirror", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.0.48"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"],
             ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.6.14"],
@@ -3971,6 +3972,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prosemirror-state", "npm:1.3.4"],
             ["prosemirror-transform", "npm:1.3.3"],
             ["prosemirror-view", "npm:1.23.3"],
+            ["react-icons", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:4.3.1"],
             ["remirror", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.0.48"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"],
             ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.6.14"],
@@ -6306,6 +6308,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-fast-compare-npm-3.2.0-fbfa6627d9-8ef272c825.zip/node_modules/react-fast-compare/",
           "packageDependencies": [
             ["react-fast-compare", "npm:3.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["react-icons", [
+        ["npm:4.3.1", {
+          "packageLocation": "./.yarn/cache/react-icons-npm-4.3.1-46cb955834-2cc608acdd.zip/node_modules/react-icons/",
+          "packageDependencies": [
+            ["react-icons", "npm:4.3.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:4.3.1", {
+          "packageLocation": "./.yarn/__virtual__/react-icons-virtual-874e8cdca9/0/cache/react-icons-npm-4.3.1-46cb955834-2cc608acdd.zip/node_modules/react-icons/",
+          "packageDependencies": [
+            ["react-icons", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:4.3.1"],
+            ["@types/react", "npm:17.0.37"],
+            ["react", null]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
           ],
           "linkType": "HARD",
         }]

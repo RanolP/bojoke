@@ -1,3 +1,4 @@
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import { styled } from '../stitches.config';
 
 const NavList = styled('ul', {
@@ -9,6 +10,8 @@ const NavList = styled('ul', {
     float: 'left',
     padding: '10px 15px',
     cursor: 'pointer',
+    fontSize: '13px',
+    lineHeight: 1.6,
   },
   '& li.active': {
     color: '#fff',
@@ -21,6 +24,21 @@ const NavList = styled('ul', {
   '& li + li': {
     marginLeft: '2px',
   },
+});
+
+const ExternalLinkIcon = styled(FaExternalLinkAlt, {
+  verticalAlign: 'sub',
+});
+
+const Caret = styled('b', {
+  display: 'inline-block',
+  width: 0,
+  height: 0,
+  marginLeft: '2px',
+  verticalAlign: 'middle',
+  borderTop: '4px solid',
+  borderRight: '4px solid transparent',
+  borderLeft: '4px solid transparent',
 });
 
 export interface NavigationBarProps {
@@ -47,8 +65,16 @@ export function NavigationBar({
         {isDebugSupported && <li>디버그</li>}
         <li>채점 현황</li>
         {hasLogined && <li>내 제출</li>}
-        {hasSolved && <li>난이도 기여</li>}
-        <li>강의</li>
+        {hasSolved && (
+          <li>
+            {' '}
+            <ExternalLinkIcon /> 난이도 기여
+          </li>
+        )}
+        <li>
+          강의
+          <Caret />
+        </li>
         {hasLogined && <li>질문 검색</li>}
       </NavList>
     </nav>
