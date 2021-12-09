@@ -1878,12 +1878,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stitches/react@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "@stitches/react@npm:1.2.5"
+"@stitches/react@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "@stitches/react@npm:1.2.6"
   peerDependencies:
     react: ">= 16.3.0"
-  checksum: 96b2ba837aeb36f9ab0479bfcad1a3fae99b3b43966aed7fffe2e32637808a29ed2f7e8d1bfcb7a327b6b39ba82ef822d80efad8f26cabc3f8ff177be095621e
+  checksum: 416088cdde17a22d6cdb04cf1cf756c6e5fc291dd7e41f82ce422bb95432ad32b6d990e7264d996d367c40bbc674d61be087e4e1f7b23eea7f81ef6266373a9c
   languageName: node
   linkType: hard
 
@@ -2402,7 +2402,7 @@ __metadata:
     "@remirror/core": ^1.3.2
     "@remirror/pm": ^1.0.8
     "@remirror/react": ^1.0.17
-    "@stitches/react": ^1.2.5
+    "@stitches/react": ^1.2.6
     "@types/katex": ^0.11.1
     "@types/prosemirror-commands": ^1.0.4
     "@types/prosemirror-inputrules": ^1.0.4
@@ -2414,7 +2414,7 @@ __metadata:
     babel-plugin-transform-hook-names: ^1.0.2
     blobity: ^0.1.7
     katex: ~0.13.0
-    preact: ^10.6.1
+    preact: ^10.6.3
     prosemirror-commands: ^1.1.12
     prosemirror-inputrules: ^1.1.3
     prosemirror-keymap: ^1.1.5
@@ -2425,7 +2425,7 @@ __metadata:
     react-icons: ^4.3.1
     remirror: ^1.0.48
     typescript: ~4.4.4
-    vite: ^2.6.14
+    vite: ^2.7.1
     yjs: ^13.5.22
   languageName: unknown
   linkType: soft
@@ -3005,7 +3005,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.13.2":
+"esbuild@npm:^0.13.12":
   version: 0.13.15
   resolution: "esbuild@npm:0.13.15"
   dependencies:
@@ -4089,21 +4089,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.3.8":
-  version: 8.4.1
-  resolution: "postcss@npm:8.4.1"
+"postcss@npm:^8.3.11":
+  version: 8.4.4
+  resolution: "postcss@npm:8.4.4"
   dependencies:
     nanoid: ^3.1.30
     picocolors: ^1.0.0
     source-map-js: ^1.0.1
-  checksum: 89ede712ccca478f3d3bc4137eac8efa9cc434ab193ae5348dfba343ab5144faa39a71e3cf53e2b45bc01e705829259706f9610d7c7c46a7a3affccd56b3e74f
+  checksum: 6cf3fe0ecdf5a0d2aeb5e8404938c7eab968704e2e29dc5421e90b4014eb1975c1c0ad828425f2428807ef6e3fcfadd71f988ab55cb06c28ac2866f22403255b
   languageName: node
   linkType: hard
 
-"preact@npm:^10.6.1":
-  version: 10.6.1
-  resolution: "preact@npm:10.6.1"
-  checksum: 930fbf57d99da42762b342d934e000f5afe339cfd7e7418982799f37063b93ade171a179a626c9667d1ca80d4bcb669c166c9be10ba96eeb4983fe14d4604763
+"preact@npm:^10.6.3":
+  version: 10.6.3
+  resolution: "preact@npm:10.6.3"
+  checksum: 267a673ff20ee9315f156a705985fb97dfe0893b0c39f57de4f39653c94a425b238500046013de727d89882c15d0803381dc6fabe7f09a36eeaea097deb3496a
   languageName: node
   linkType: hard
 
@@ -4727,9 +4727,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.57.0":
-  version: 2.60.1
-  resolution: "rollup@npm:2.60.1"
+"rollup@npm:^2.59.0":
+  version: 2.61.0
+  resolution: "rollup@npm:2.61.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -4737,7 +4737,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 77d7980bd5e619075c7cc67ccbe63263c4e98bd4cc41d4d77d5d4b743cb954adc81d348e38049546645651e2d0e73feeafdcac4474bd8ea333bf5cb882f0bc0c
+  checksum: 9a30043759c990503f870fa2591b428d8dc979a2c407c3f23a177fa8bef5e423f9a6adf707e0a92bdd67a3a1af28ff1e5fdf6176e1d03c513867608208165d87
   languageName: node
   linkType: hard
 
@@ -5191,15 +5191,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^2.6.14":
-  version: 2.6.14
-  resolution: "vite@npm:2.6.14"
+"vite@npm:^2.7.1":
+  version: 2.7.1
+  resolution: "vite@npm:2.7.1"
   dependencies:
-    esbuild: ^0.13.2
+    esbuild: ^0.13.12
     fsevents: ~2.3.2
-    postcss: ^8.3.8
+    postcss: ^8.3.11
     resolve: ^1.20.0
-    rollup: ^2.57.0
+    rollup: ^2.59.0
   peerDependencies:
     less: "*"
     sass: "*"
@@ -5216,7 +5216,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 4bf2b7407771440de81546932cf0b1bd74f9254e6056665a596b9310f37b2d34a65728a2a0525300ef48fa1f3e2ec5a3366326eecf31db7b86c19463e22186a8
+  checksum: 3e7bfcf2b37b27cbd8de7846fc5cc49aeebb2d793484ae40d2d4174894f1339c0c3c3fc4c9a1919c28b089efa5e64c9fadec5bd0a0a2fa852e771ff7fdd4dc94
   languageName: node
   linkType: hard
 

@@ -38,6 +38,7 @@ export class MathInlineExtension extends NodeExtension {
   ): NodeExtensionSpec {
     return {
       group: 'inline math',
+      marks: '_',
       content: 'text*',
       inline: true,
       atom: true,
@@ -55,6 +56,6 @@ export class MathInlineExtension extends NodeExtension {
   }
 
   createNodeViews(): NodeViewMethod | Record<string, NodeViewMethod> {
-    return createMathView(true);
+    return createMathView(false);
   }
 }

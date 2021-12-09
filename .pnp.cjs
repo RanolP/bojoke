@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@remirror/core", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.3.2"],
             ["@remirror/pm", "npm:1.0.8"],
             ["@remirror/react", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.0.17"],
-            ["@stitches/react", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.2.5"],
+            ["@stitches/react", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.2.6"],
             ["@types/katex", "npm:0.11.1"],
             ["@types/prosemirror-commands", "npm:1.0.4"],
             ["@types/prosemirror-inputrules", "npm:1.0.4"],
@@ -54,7 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-plugin-transform-hook-names", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.0.2"],
             ["blobity", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:0.1.7"],
             ["katex", "npm:0.13.24"],
-            ["preact", "npm:10.6.1"],
+            ["preact", "npm:10.6.3"],
             ["prosemirror-commands", "npm:1.1.12"],
             ["prosemirror-inputrules", "npm:1.1.3"],
             ["prosemirror-keymap", "npm:1.1.5"],
@@ -65,7 +65,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:4.3.1"],
             ["remirror", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.0.48"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"],
-            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.6.14"],
+            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.7.1"],
             ["yjs", "npm:13.5.22"]
           ],
           "linkType": "SOFT",
@@ -766,7 +766,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/vite", null],
             ["debug", "virtual:40c87ada7f2f684a486a15e9daad470176b55201376bfdeb15dad896f5233b78f99666966eda31038040b4d17aa8b8f8bf53fddc6773a558064319b9a0677061#npm:4.3.2"],
             ["kolorist", "npm:1.5.0"],
-            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.6.14"]
+            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.7.1"]
           ],
           "packagePeers": [
             "@types/vite",
@@ -835,7 +835,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/preact", null],
             ["@types/vite", null],
             ["preact", null],
-            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.6.14"]
+            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.7.1"]
           ],
           "packagePeers": [
             "@types/preact",
@@ -3311,17 +3311,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@stitches/react", [
-        ["npm:1.2.5", {
-          "packageLocation": "./.yarn/cache/@stitches-react-npm-1.2.5-6238823c14-96b2ba837a.zip/node_modules/@stitches/react/",
+        ["npm:1.2.6", {
+          "packageLocation": "./.yarn/cache/@stitches-react-npm-1.2.6-a7b2da8f9b-416088cdde.zip/node_modules/@stitches/react/",
           "packageDependencies": [
-            ["@stitches/react", "npm:1.2.5"]
+            ["@stitches/react", "npm:1.2.6"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.2.5", {
-          "packageLocation": "./.yarn/__virtual__/@stitches-react-virtual-2a21b96e81/0/cache/@stitches-react-npm-1.2.5-6238823c14-96b2ba837a.zip/node_modules/@stitches/react/",
+        ["virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.2.6", {
+          "packageLocation": "./.yarn/__virtual__/@stitches-react-virtual-da6cb16789/0/cache/@stitches-react-npm-1.2.6-a7b2da8f9b-416088cdde.zip/node_modules/@stitches/react/",
           "packageDependencies": [
-            ["@stitches/react", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.2.5"],
+            ["@stitches/react", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.2.6"],
             ["@types/react", "npm:17.0.37"],
             ["react", null]
           ],
@@ -3952,7 +3952,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@remirror/core", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.3.2"],
             ["@remirror/pm", "npm:1.0.8"],
             ["@remirror/react", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.0.17"],
-            ["@stitches/react", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.2.5"],
+            ["@stitches/react", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.2.6"],
             ["@types/katex", "npm:0.11.1"],
             ["@types/prosemirror-commands", "npm:1.0.4"],
             ["@types/prosemirror-inputrules", "npm:1.0.4"],
@@ -3964,7 +3964,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-plugin-transform-hook-names", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.0.2"],
             ["blobity", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:0.1.7"],
             ["katex", "npm:0.13.24"],
-            ["preact", "npm:10.6.1"],
+            ["preact", "npm:10.6.3"],
             ["prosemirror-commands", "npm:1.1.12"],
             ["prosemirror-inputrules", "npm:1.1.3"],
             ["prosemirror-keymap", "npm:1.1.5"],
@@ -3975,7 +3975,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:4.3.1"],
             ["remirror", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:1.0.48"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"],
-            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.6.14"],
+            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.7.1"],
             ["yjs", "npm:13.5.22"]
           ],
           "linkType": "SOFT",
@@ -5904,10 +5904,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["postcss", [
-        ["npm:8.4.1", {
-          "packageLocation": "./.yarn/cache/postcss-npm-8.4.1-6c95363249-89ede712cc.zip/node_modules/postcss/",
+        ["npm:8.4.4", {
+          "packageLocation": "./.yarn/cache/postcss-npm-8.4.4-59028ec3b7-6cf3fe0ecd.zip/node_modules/postcss/",
           "packageDependencies": [
-            ["postcss", "npm:8.4.1"],
+            ["postcss", "npm:8.4.4"],
             ["nanoid", "npm:3.1.30"],
             ["picocolors", "npm:1.0.0"],
             ["source-map-js", "npm:1.0.1"]
@@ -5916,10 +5916,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["preact", [
-        ["npm:10.6.1", {
-          "packageLocation": "./.yarn/cache/preact-npm-10.6.1-ca02621419-930fbf57d9.zip/node_modules/preact/",
+        ["npm:10.6.3", {
+          "packageLocation": "./.yarn/cache/preact-npm-10.6.3-769a55f38b-267a673ff2.zip/node_modules/preact/",
           "packageDependencies": [
-            ["preact", "npm:10.6.1"]
+            ["preact", "npm:10.6.3"]
           ],
           "linkType": "HARD",
         }]
@@ -6782,10 +6782,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["rollup", [
-        ["npm:2.60.1", {
-          "packageLocation": "./.yarn/cache/rollup-npm-2.60.1-28fe432330-77d7980bd5.zip/node_modules/rollup/",
+        ["npm:2.61.0", {
+          "packageLocation": "./.yarn/cache/rollup-npm-2.61.0-684c26ef82-9a30043759.zip/node_modules/rollup/",
           "packageDependencies": [
-            ["rollup", "npm:2.60.1"],
+            ["rollup", "npm:2.61.0"],
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"]
           ],
           "linkType": "HARD",
@@ -7319,26 +7319,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["vite", [
-        ["npm:2.6.14", {
-          "packageLocation": "./.yarn/cache/vite-npm-2.6.14-b92b49e173-4bf2b74077.zip/node_modules/vite/",
+        ["npm:2.7.1", {
+          "packageLocation": "./.yarn/cache/vite-npm-2.7.1-ff12257f78-3e7bfcf2b3.zip/node_modules/vite/",
           "packageDependencies": [
-            ["vite", "npm:2.6.14"]
+            ["vite", "npm:2.7.1"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.6.14", {
-          "packageLocation": "./.yarn/__virtual__/vite-virtual-87c6de2734/0/cache/vite-npm-2.6.14-b92b49e173-4bf2b74077.zip/node_modules/vite/",
+        ["virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.7.1", {
+          "packageLocation": "./.yarn/__virtual__/vite-virtual-04dfad4425/0/cache/vite-npm-2.7.1-ff12257f78-3e7bfcf2b3.zip/node_modules/vite/",
           "packageDependencies": [
-            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.6.14"],
+            ["vite", "virtual:c6d190154ba9b5ef44264e31c5d27698089d555b4e117cc67686a2d404a517db2fbaad274b33daf6df835ee386ad30ba57b142fc38ae0154d74377e1d1190bfa#npm:2.7.1"],
             ["@types/less", null],
             ["@types/sass", null],
             ["@types/stylus", null],
             ["esbuild", "npm:0.13.15"],
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"],
             ["less", null],
-            ["postcss", "npm:8.4.1"],
+            ["postcss", "npm:8.4.4"],
             ["resolve", "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"],
-            ["rollup", "npm:2.60.1"],
+            ["rollup", "npm:2.61.0"],
             ["sass", null],
             ["stylus", null]
           ],

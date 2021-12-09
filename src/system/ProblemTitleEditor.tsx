@@ -22,13 +22,16 @@ const Editor = css({
   '& .math-render': {
     fontSize: '109%',
   },
+  overflowX: 'hidden',
+  maxWidth: '100%',
+  maxHeight: '100%',
 });
 
 const EditableIcon = styled(FiEdit3, {
   position: 'absolute',
   left: '-16px',
-  top: '35px',
-  transform: 'translate(-100%, 50%)',
+  top: 'calc(50% + 8px)',
+  transform: 'translate(-100%, -50%)',
   paddingRight: '4px',
   borderLeft: 'none',
   border: '1px solid black',
@@ -53,7 +56,7 @@ export function ProblemTitleEditor(): JSX.Element {
           content: [
             {
               type: 'text',
-              text: String.raw`\mathrm{Con + \frac{tin}{ued + \frac{Frac}{tions}}}`,
+              text: String.raw`\text{Con} + \cfrac{\text{tin}}{\text{ued} + \cfrac{\text{Frac}}{\text{tions}}}`,
             },
           ],
         },
