@@ -2509,7 +2509,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remirror/react@npm:beta":
+"@remirror/react@npm:^2.0.0-beta":
   version: 2.0.0-beta.13
   resolution: "@remirror/react@npm:2.0.0-beta.13"
   dependencies:
@@ -3187,7 +3187,7 @@ __metadata:
     "@preact/preset-vite": ^2.3.0
     "@remirror/core": ^1.4.7
     "@remirror/pm": ^1.0.22
-    "@remirror/react": beta
+    "@remirror/react": ^2.0.0-beta
     "@stitches/react": ^1.2.8
     "@types/katex": ^0.14.0
     "@types/prosemirror-commands": ^1.0.4
@@ -3199,6 +3199,7 @@ __metadata:
     "@types/react": ^18.0.17
     babel-plugin-transform-hook-names: ^1.0.2
     blobity: ^0.2.1
+    jotai: ^1.7.8
     katex: ~0.13.0
     preact: ^10.10.2
     prosemirror-commands: ^1.3.0
@@ -4399,6 +4400,43 @@ __metadata:
   version: 0.2.4
   resolution: "isomorphic.js@npm:0.2.4"
   checksum: 7adb91495de1ff0af9a524cb7ffccde7984ea7c547f3b9fe387b51a2be6c3f607a086d253224a985cf55a28e41d57f5cb22e285543e95ab97e7ba36783f2cd81
+  languageName: node
+  linkType: hard
+
+"jotai@npm:^1.7.8":
+  version: 1.7.8
+  resolution: "jotai@npm:1.7.8"
+  peerDependencies:
+    "@babel/core": "*"
+    "@babel/template": "*"
+    "@tanstack/query-core": "*"
+    "@urql/core": "*"
+    immer: "*"
+    optics-ts: "*"
+    react: ">=16.8"
+    valtio: "*"
+    wonka: "*"
+    xstate: "*"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    "@babel/template":
+      optional: true
+    "@tanstack/query-core":
+      optional: true
+    "@urql/core":
+      optional: true
+    immer:
+      optional: true
+    optics-ts:
+      optional: true
+    valtio:
+      optional: true
+    wonka:
+      optional: true
+    xstate:
+      optional: true
+  checksum: 15eca7c0519511c9d4b6c56c334e79451ea44466c23cd2abbcdb88072f9b068f1a3612513bdacd3c1b9558a744776368796c3a5ec26f32704b8b7488d294f7fb
   languageName: node
   linkType: hard
 

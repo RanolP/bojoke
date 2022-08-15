@@ -25,6 +25,8 @@ import {
   TextColorExtension,
   UnderlineExtension,
 } from 'remirror/extensions';
+import { Focus } from '../atoms/focus';
+import { useGlobalFocus } from '../hooks/use-global-focus';
 import { MathInlineExtension } from '../lib/vendors/remirror/extension-math/math-inline-extension';
 import { MathSelectExtension } from '../lib/vendors/remirror/extension-math/math-select-extension';
 import { css, styled } from '../stitches.config';
@@ -58,44 +60,49 @@ const EditableIcon = styled(FiEdit3, {
 });
 
 export interface MainTextEditorProps {
+  id: Focus;
   initialContent: RemirrorContentType<Schema<string, string>>;
 }
 
 export function MainTextEditor({
+  id,
   initialContent,
 }: MainTextEditorProps): JSX.Element {
   // TODO: Using positioner extension for text actions
   const { manager, state } = useRemirror({
-    extensions: () => [
-      new BlockquoteExtension(),
-      new BoldExtension(),
-      new CodeBlockExtension(),
-      new CodeExtension(),
-      new IframeExtension(),
-      new FontSizeExtension(),
-      new HistoryExtension(),
-      new ImageExtension(),
-      new ItalicExtension(),
-      new LinkExtension(),
-      new BulletListExtension(),
-      new OrderedListExtension(),
-      new NodeFormattingExtension(),
-      new PlaceholderExtension(initialContent),
-      new StrikeExtension(),
-      new SubExtension(),
-      new SupExtension(),
-      new TableExtension(),
-      new TextColorExtension(),
-      new UnderlineExtension(),
+    extensions: () =>
+      [
+        new BlockquoteExtension(),
+        new BoldExtension(),
+        new CodeBlockExtension(),
+        new CodeExtension(),
+        new IframeExtension(),
+        new FontSizeExtension(),
+        new HistoryExtension(),
+        new ImageExtension(),
+        new ItalicExtension(),
+        new LinkExtension(),
+        new BulletListExtension(),
+        new OrderedListExtension(),
+        new NodeFormattingExtension(),
+        new PlaceholderExtension(initialContent),
+        new StrikeExtension(),
+        new SubExtension(),
+        new SupExtension(),
+        new TableExtension(),
+        new TextColorExtension(),
+        new UnderlineExtension(),
 
-      // TODO: new MathBlockExtension(),
-      new MathInlineExtension(),
-      new MathSelectExtension(),
-    ] as any,
+        // TODO: new MathBlockExtension(),
+        new MathInlineExtension(),
+        new MathSelectExtension(),
+      ] as any,
     plugins: [mathPlugin],
     content: initialContent,
     stringHandler: 'html',
   });
+
+  const onFocus = useGlobalFocus(id, manager.store);
 
   return (
     <Wrap className="remirror-theme">
@@ -104,6 +111,7 @@ export function MainTextEditor({
         classNames={[Editor()]}
         manager={manager}
         initialContent={state}
+        onFocus={onFocus}
       />
     </Wrap>
   );
