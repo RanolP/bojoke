@@ -87,6 +87,7 @@ const StyledNumericInput = styled(NumericInput, {
 
 export function ProblemInfoTable(): JSX.Element {
   const [timeLimit, setTimeLimit] = useState(3);
+  const [memoryLimit, setMemoryLimit] = useState(256);
 
   return (
     <Table>
@@ -105,7 +106,10 @@ export function ProblemInfoTable(): JSX.Element {
           <td>
             <StyledNumericInput value={timeLimit} setValue={setTimeLimit} /> 초
           </td>
-          <td>256 MB</td>
+          <td>
+            <StyledNumericInput value={memoryLimit} setValue={setMemoryLimit} />{' '}
+            MB
+          </td>
           <td>219</td>
           <td>40</td>
           <td>37</td>
