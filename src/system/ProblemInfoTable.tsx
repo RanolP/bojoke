@@ -24,13 +24,17 @@ interface NumericInputProps
     'type' | 'onInput' | 'ref' | 'id'
   > {
   id: Focus;
-  value: number;
-  setValue(value: number): void;
+  value: string;
+  setValue(value: string): void;
 }
 
 const HiddenSpan = styled('span', {
   visibility: 'hidden',
   position: 'absolute',
+
+  ':invalid + &': {
+    fontWeight: 'bold',
+  },
 });
 
 function NumericInput({
@@ -44,16 +48,9 @@ function NumericInput({
 
   const onFocus = useGlobalFocus(id);
 
-  function update(value: number) {
-    setValue(value);
-  }
   function onInput(e: JSX.TargetedEvent<HTMLInputElement>) {
-    update(e.currentTarget.valueAsNumber);
+    setValue(e.currentTarget.value);
   }
-
-  useEffect(() => {
-    update(value);
-  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -68,7 +65,7 @@ function NumericInput({
   return (
     <>
       <input
-        type="number"
+        type="text"
         value={value}
         onInput={onInput}
         onFocus={onFocus}
@@ -100,15 +97,26 @@ const StyledNumericInput = styled(NumericInput, {
     margin: '0 -2px -2px -2px',
     width: 'calc(var(--width) + 4px)',
   },
+
+  '&:invalid': {
+    color: 'white',
+    fontWeight: 'bold',
+    background: 'red',
+    border: '2px solid red',
+    borderBottomColor: 'blue',
+    padding: '0 2px',
+    margin: '-2px -4px -2px -4px',
+    width: 'calc(var(--width) + 8px)',
+  },
 });
 
 export function ProblemInfoTable(): JSX.Element {
-  const [timeLimit, setTimeLimit] = useState(3);
-  const [memoryLimit, setMemoryLimit] = useState(256);
-  const [submissionCount, setSubmissionCount] = useState(219);
-  const [submissionAcCount, setSubmissionAcCount] = useState(40);
-  const [userAcCount, setUserAcCount] = useState(37);
-  const [acPercentage, setAcPercentage] = useState(21.893);
+  const [timeLimit, setTimeLimit] = useState('3');
+  const [memoryLimit, setMemoryLimit] = useState('256');
+  const [submissionCount, setSubmissionCount] = useState('219');
+  const [submissionAcCount, setSubmissionAcCount] = useState('40');
+  const [userAcCount, setUserAcCount] = useState('37');
+  const [acPercentage, setAcPercentage] = useState('21.893');
 
   return (
     <Table>
@@ -128,6 +136,8 @@ export function ProblemInfoTable(): JSX.Element {
             <StyledNumericInput
               id="info/time-limit"
               value={timeLimit}
+              pattern="-?(0|[1-9][0-9]*)(\.[0-9]*[1-9])?"
+              title="부호 있는 정수 혹은 실수, 소수점은 간결하게 적음"
               setValue={setTimeLimit}
             />{' '}
             초
@@ -136,6 +146,8 @@ export function ProblemInfoTable(): JSX.Element {
             <StyledNumericInput
               id="info/memory-limit"
               value={memoryLimit}
+              pattern="(0|[1-9][0-9]*)"
+              title="음이 아닌 정수"
               setValue={setMemoryLimit}
             />{' '}
             MB
@@ -144,6 +156,8 @@ export function ProblemInfoTable(): JSX.Element {
             <StyledNumericInput
               id="info/submission-count"
               value={submissionCount}
+              pattern="(0|[1-9][0-9]*)"
+              title="음이 아닌 정수"
               setValue={setSubmissionCount}
             />
           </td>
@@ -151,6 +165,8 @@ export function ProblemInfoTable(): JSX.Element {
             <StyledNumericInput
               id="info/submission-count"
               value={submissionAcCount}
+              pattern="(0|[1-9][0-9]*)"
+              title="음이 아닌 정수"
               setValue={setSubmissionAcCount}
             />
           </td>
@@ -158,6 +174,8 @@ export function ProblemInfoTable(): JSX.Element {
             <StyledNumericInput
               id="info/submission-count"
               value={userAcCount}
+              pattern="(0|[1-9][0-9]*)"
+              title="음이 아닌 정수"
               setValue={setUserAcCount}
             />
           </td>
@@ -165,6 +183,8 @@ export function ProblemInfoTable(): JSX.Element {
             <StyledNumericInput
               id="info/submission-count"
               value={acPercentage}
+              pattern="((0|[1-9][0-9]{0,1})\.[0-9]{3}|100.000)"
+              title="0 ~ 100 사이 백분율, 소수점 3자리까지 표시"
               setValue={setAcPercentage}
             />
             %
