@@ -34,7 +34,7 @@ export class MathInlineExtension extends NodeExtension {
 
   createNodeSpec(
     extra: ApplySchemaAttributes,
-    override: NodeSpecOverride
+    override: NodeSpecOverride,
   ): NodeExtensionSpec {
     return {
       group: 'inline math',
@@ -52,10 +52,12 @@ export class MathInlineExtension extends NodeExtension {
   }
 
   createInputRules(): InputRule[] {
-    return [makeInlineMathInputRule(REGEX_INLINE_MATH_DOLLARS, this.type)];
+    return [
+      makeInlineMathInputRule(REGEX_INLINE_MATH_DOLLARS, this.type as any),
+    ];
   }
 
-  createNodeViews(): NodeViewMethod | Record<string, NodeViewMethod> {
-    return createMathView(false);
-  }
+  createNodeViews = ((): NodeViewMethod | Record<string, NodeViewMethod> => {
+    return createMathView(false) as any;
+  }) as any;
 }

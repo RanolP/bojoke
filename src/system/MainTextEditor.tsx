@@ -91,7 +91,7 @@ export function MainTextEditor({
       // TODO: new MathBlockExtension(),
       new MathInlineExtension(),
       new MathSelectExtension(),
-    ],
+    ] as any,
     plugins: [mathPlugin],
     content: initialContent,
     stringHandler: 'html',

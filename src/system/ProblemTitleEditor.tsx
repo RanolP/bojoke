@@ -1,4 +1,5 @@
 import { mathPlugin, mathSelectPlugin } from '@benrbray/prosemirror-math';
+import { AnyExtension } from '@remirror/core';
 import { Remirror, useRemirror } from '@remirror/react';
 import { FiEdit3 } from 'react-icons/fi';
 import { PlaceholderExtension } from 'remirror/extensions';
@@ -46,7 +47,7 @@ export function ProblemTitleEditor(): JSX.Element {
       new MathInlineExtension(),
       new MathSelectExtension(),
       new PlaceholderExtension('A+B'),
-    ],
+    ] as any,
     plugins: [mathPlugin],
     content: {
       type: 'paragraph',
