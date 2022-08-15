@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { styled } from '../stitches.config';
 
 const Table = styled('table', {
@@ -15,7 +16,78 @@ const Table = styled('table', {
   },
 });
 
+interface NumericInputProps
+  extends Exclude<
+    JSX.HTMLAttributes<HTMLInputElement>,
+    'type' | 'onInput' | 'ref'
+  > {
+  value: number;
+  setValue(value: number): void;
+}
+
+const HiddenSpan = styled('span', {
+  visibility: 'hidden',
+  position: 'absolute',
+});
+
+function NumericInput({
+  value,
+  setValue,
+  ...props
+}: NumericInputProps): JSX.Element {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const spanRef = useRef<HTMLSpanElement>(null);
+
+  function update(value: number) {
+    setValue(value);
+  }
+  function onInput(e: JSX.TargetedEvent<HTMLInputElement>) {
+    update(e.currentTarget.valueAsNumber);
+  }
+
+  useEffect(() => {
+    update(value);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!spanRef.current || !inputRef.current) {
+        return;
+      }
+      const width = spanRef.current.clientWidth;
+      inputRef.current.style.width = `${width}px`;
+    }, 10);
+  }, [value]);
+
+  return (
+    <>
+      <input
+        type="number"
+        value={value}
+        onInput={onInput}
+        ref={inputRef}
+        {...props}
+      />
+      <HiddenSpan ref={spanRef}>{value}</HiddenSpan>
+    </>
+  );
+}
+
+const StyledNumericInput = styled(NumericInput, {
+  border: 'none',
+  boxSizing: 'border-box',
+  padding: 0,
+  fontFamily: 'inherit',
+
+  '-moz-appearance': 'textfield',
+  '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
+    display: 'none',
+  },
+});
+
 export function ProblemInfoTable(): JSX.Element {
+  const [timeLimit, setTimeLimit] = useState(3);
+
   return (
     <Table>
       <thead>
@@ -30,7 +102,9 @@ export function ProblemInfoTable(): JSX.Element {
       </thead>
       <tbody>
         <tr>
-          <td>3 초</td>
+          <td>
+            <StyledNumericInput value={timeLimit} setValue={setTimeLimit} /> 초
+          </td>
           <td>256 MB</td>
           <td>219</td>
           <td>40</td>
