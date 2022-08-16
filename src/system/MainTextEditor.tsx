@@ -27,6 +27,7 @@ import {
 } from 'remirror/extensions';
 import { Focus } from '../atoms/focus';
 import { useGlobalFocus } from '../hooks/use-global-focus';
+import { useLocked } from '../hooks/useLocked';
 import { MathInlineExtension } from '../lib/vendors/remirror/extension-math/math-inline-extension';
 import { MathSelectExtension } from '../lib/vendors/remirror/extension-math/math-select-extension';
 import { css, styled } from '../stitches.config';
@@ -68,6 +69,8 @@ export function MainTextEditor({
   id,
   initialContent,
 }: MainTextEditorProps): JSX.Element {
+  const readonly = useLocked();
+
   // TODO: Using positioner extension for text actions
   const { manager, state } = useRemirror({
     extensions: () =>
@@ -106,12 +109,13 @@ export function MainTextEditor({
 
   return (
     <Wrap className="remirror-theme">
-      <EditableIcon />
+      {!readonly && <EditableIcon />}
       <Remirror
         classNames={[Editor()]}
         manager={manager}
         initialContent={state}
         onFocus={onFocus}
+        editable={!readonly}
       />
     </Wrap>
   );

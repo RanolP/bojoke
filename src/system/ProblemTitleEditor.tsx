@@ -4,6 +4,7 @@ import { Remirror, useRemirror } from '@remirror/react';
 import { FiEdit3 } from 'react-icons/fi';
 import { PlaceholderExtension } from 'remirror/extensions';
 import { useGlobalFocus } from '../hooks/use-global-focus';
+import { useLocked } from '../hooks/useLocked';
 import { MathInlineExtension } from '../lib/vendors/remirror/extension-math/math-inline-extension';
 import { MathSelectExtension } from '../lib/vendors/remirror/extension-math/math-select-extension';
 import { css, styled } from '../stitches.config';
@@ -43,6 +44,7 @@ const EditableIcon = styled(FiEdit3, {
 });
 
 export function ProblemTitleEditor(): JSX.Element {
+  const readonly = useLocked();
   const { manager, state } = useRemirror({
     extensions: () =>
       [
@@ -72,12 +74,13 @@ export function ProblemTitleEditor(): JSX.Element {
 
   return (
     <Heading className="remirror-theme">
-      <EditableIcon />
+      {!readonly && <EditableIcon />}
       <Remirror
         classNames={[Editor()]}
         manager={manager}
         initialContent={state}
         onFocus={onFocus}
+        editable={!readonly}
       />
     </Heading>
   );

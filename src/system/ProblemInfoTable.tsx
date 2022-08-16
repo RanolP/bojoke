@@ -82,7 +82,10 @@ const StyledNumericInput = styled(NumericInput, {
   boxSizing: 'border-box',
   padding: 0,
   fontFamily: 'inherit',
+  fontSize: 'inherit',
   outline: 'none',
+
+  overflow: 'visible',
 
   '-moz-appearance': 'textfield',
   '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
