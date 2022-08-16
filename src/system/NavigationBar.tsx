@@ -1,5 +1,9 @@
+import { useAtomValue } from 'jotai';
+import { useState } from 'preact/hooks';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { debugAtom, loginAtom, solvedAtom } from '../atoms/problem-meta';
 import { styled } from '../stitches.config';
+import { NumericInput } from './NumericInput';
 
 const NavList = styled('ul', {
   paddingLeft: 0,
@@ -41,23 +45,26 @@ const Caret = styled('b', {
   borderLeft: '4px solid transparent',
 });
 
-export interface NavigationBarProps {
-  id: number;
-  hasLogined: boolean;
-  hasSolved: boolean;
-  isDebugSupported: boolean;
-}
+export function NavigationBar(): JSX.Element {
+  const [id, setId] = useState('10386');
 
-export function NavigationBar({
-  id,
-  hasLogined,
-  hasSolved,
-  isDebugSupported,
-}: NavigationBarProps): JSX.Element {
+  const hasLogined = useAtomValue(loginAtom);
+  const hasSolved = useAtomValue(solvedAtom);
+  const isDebugSupported = useAtomValue(debugAtom);
+
   return (
     <nav>
       <NavList>
-        <li className="active">{id}번</li>
+        <li className="active">
+          <NumericInput
+            id="problem-id"
+            value={id}
+            setValue={setId}
+            context="problem-id"
+            pattern="(0|[1-9][0-9]*)"
+          />
+          번
+        </li>
         <li>제출</li>
         <li>맞힌 사람</li>
         <li>숏코딩</li>

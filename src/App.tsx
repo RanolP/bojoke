@@ -43,12 +43,7 @@ export function App() {
     <TotalWrap>
       <MockSettingPanel />
       <ProblemArea>
-        <NavigationBar
-          id={10386}
-          hasLogined={true}
-          hasSolved={true}
-          isDebugSupported={true}
-        />
+        <NavigationBar />
         <TitleArea>
           <ProblemTitleEditor />
           <SolvedAcTierSelect />
