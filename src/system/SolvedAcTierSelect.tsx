@@ -1,5 +1,6 @@
 import { CSS } from '@stitches/react';
 import { useState } from 'preact/hooks';
+import { useGlobalFocus } from '../hooks/use-global-focus';
 import { useLocked } from '../hooks/useLocked';
 import { styled } from '../stitches.config';
 
@@ -97,7 +98,7 @@ const TierOption = styled('option', {
   },
   '&:nth-of-type(2n+1)': {
     background: '#f2f2f2',
-  }
+  },
 });
 
 export function SolvedAcTierSelect(): JSX.Element {
@@ -112,6 +113,8 @@ export function SolvedAcTierSelect(): JSX.Element {
     tierId,
   )}.svg`;
 
+  const onFocus = useGlobalFocus('tier');
+
   function onInput(e: JSX.TargetedEvent<HTMLSelectElement>) {
     setTierId(Number(e.currentTarget.value));
   }
@@ -122,7 +125,12 @@ export function SolvedAcTierSelect(): JSX.Element {
       {readonly ? (
         <TierText range={tier}>{label}</TierText>
       ) : (
-        <TierSelect range={tier} value={tierId} onInput={onInput}>
+        <TierSelect
+          range={tier}
+          value={tierId}
+          onInput={onInput}
+          onFocus={onFocus}
+        >
           {Array.from({ length: TiersLeveledList.length })
             .map((_, i) => TiersLeveledList[i])
             .map(([tier, label], i) => (

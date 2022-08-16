@@ -4,6 +4,7 @@ export type Focus =
   | null
   | 'title'
   | 'problem-id'
+  | 'tier'
   | 'main-text/description'
   | 'main-text/input'
   | 'main-text/output'
