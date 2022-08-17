@@ -20,6 +20,7 @@ const Editor = css({
   boxShadow: 'none !important',
   overflowY: 'hidden !important',
   display: 'inline-block',
+  width: '100%',
   minHeight: 'unset !important',
   marginLeft: '-16px',
   '& .math-render': {
