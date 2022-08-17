@@ -86,8 +86,7 @@ export const NumericInput = styled(UnstyledNumericInput, {
 
   width: 'var(--width)',
 
-  // TODO: only if not readonly
-  '&:focus': {
+  '&:focus:not([readonly])': {
     borderBottom: '2px solid blue',
     padding: '0 2px',
     margin: '0 -2px -2px -2px',
