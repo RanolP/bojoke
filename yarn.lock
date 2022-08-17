@@ -2855,18 +2855,18 @@ __metadata:
     blobity: ^0.2.1
     jotai: ^1.7.8
     katex: ~0.13.0
-    preact: ^10.10.2
+    preact: ^10.10.3
     prosemirror-commands: ^1.3.0
     prosemirror-inputrules: ^1.2.0
     prosemirror-keymap: ^1.2.0
     prosemirror-model: ^1.18.1
     prosemirror-state: ^1.4.1
-    prosemirror-transform: ^1.6.0
-    prosemirror-view: ^1.27.0
+    prosemirror-transform: ^1.7.0
+    prosemirror-view: ^1.27.1
     react-icons: ^4.4.0
     remirror: ^1.0.89
     typescript: ^4.7.4
-    vite: ^3.0.7
+    vite: ^3.0.8
     yjs: ^13.5.41
   languageName: unknown
   linkType: soft
@@ -4643,10 +4643,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact@npm:^10.10.2":
-  version: 10.10.2
-  resolution: "preact@npm:10.10.2"
-  checksum: 3e994205eb75ce7c79f45bfd86b297645937f926c06fa2a541bf87a5ae168dd6c9f0945af29986065877623d58d1977aff073e4378683994fabee0edbb165c24
+"preact@npm:^10.10.3":
+  version: 10.10.3
+  resolution: "preact@npm:10.10.3"
+  checksum: f62762c45d577a0c269bfebf558d3b1940523630c64b0d3895090425a0fb4ed4c6f960fb57b789bda85a5bfc85c7d65d70b596b6579d09b7c2a436565b59e11e
   languageName: node
   linkType: hard
 
@@ -4971,12 +4971,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-transform@npm:^1.0.0, prosemirror-transform@npm:^1.1.0, prosemirror-transform@npm:^1.2.1, prosemirror-transform@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "prosemirror-transform@npm:1.6.0"
+"prosemirror-transform@npm:^1.0.0, prosemirror-transform@npm:^1.1.0, prosemirror-transform@npm:^1.2.1, prosemirror-transform@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "prosemirror-transform@npm:1.7.0"
   dependencies:
     prosemirror-model: ^1.0.0
-  checksum: b199b170521ca6b7f8093b7651a57e59b8a1746e6f6a3cf58653f12e981be387240b7cd01717eb7c52b9fd20e99a32b46e70d09de07f413a602d552ab2270e8a
+  checksum: 8d099ae0dcc3835350a23fcb6080e4248ca6798186e28044467f22cf92966e48b3b4d17102ab9143c27b6d26eb04d9c5b61887ef706400fdb6c3cc40781b55aa
   languageName: node
   linkType: hard
 
@@ -4991,14 +4991,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-view@npm:^1.0.0, prosemirror-view@npm:^1.1.0, prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.27.0":
-  version: 1.27.0
-  resolution: "prosemirror-view@npm:1.27.0"
+"prosemirror-view@npm:^1.0.0, prosemirror-view@npm:^1.1.0, prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.27.1":
+  version: 1.27.1
+  resolution: "prosemirror-view@npm:1.27.1"
   dependencies:
     prosemirror-model: ^1.16.0
     prosemirror-state: ^1.0.0
     prosemirror-transform: ^1.1.0
-  checksum: 5a4a454b8ce6ddf8a1ac67d2e398ab30d58c547c8fdeda6e29bb8283d2176bef044ba7d6d255aaa7aaaa34d4c99fdbc579eaef18d73cde5a1b087ee92e6fa064
+  checksum: 01eb4c6567596fc93283449e3cb8ed4727b470a78fee8c0be5fdef24bb021f7e251a152d9bb0d1d562bd7bbadccb12cc30a4a3cd70f19cb9791ec3846b0adf18
   languageName: node
   linkType: hard
 
@@ -5831,9 +5831,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^3.0.7":
-  version: 3.0.7
-  resolution: "vite@npm:3.0.7"
+"vite@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "vite@npm:3.0.8"
   dependencies:
     esbuild: ^0.14.47
     fsevents: ~2.3.2
@@ -5859,7 +5859,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 3cdcb68e16433b9addee61c117c379692e4d12d44ee7011da99ed9516b8c37ce76f1bb1728eab0e3a28957c9d2dc839024e1607c2ad03f38089e3be55d7dd456
+  checksum: ec3f57d52f2bf28f2f89898053c2156f025a108a95e9308ce6580f43d8fdaae866f7988afa8207a8c8509069d3a0b50ee79b9a8050590a825f4b7771646c2755
   languageName: node
   linkType: hard
 
