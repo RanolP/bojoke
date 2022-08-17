@@ -4,7 +4,7 @@ import {
   EditorState,
 } from '@remirror/core';
 import { useAtom } from 'jotai';
-import { useCallback, useEffect } from 'preact/hooks';
+import { useCallback, useEffect, useRef } from 'preact/hooks';
 import { Focus, focusAtom } from '../atoms/focus';
 
 export function useGlobalFocus(id: Focus, store?: AnyManagerStore) {
@@ -15,6 +15,21 @@ export function useGlobalFocus(id: Focus, store?: AnyManagerStore) {
     }
   }, [focus, id, store]);
 
+  const hasFocus = focus === id;
+
   const onFocus = useCallback(() => setFocus(id), []);
-  return onFocus;
+
+  const focusRef = useRef<Focus>(null);
+  useEffect(() => {
+    focusRef.current = focus;
+  }, [focus]);
+  useEffect(() => {
+    return () => {
+      if (focusRef.current === id) {
+        setFocus(null);
+      }
+    };
+  }, []);
+
+  return { hasFocus, onFocus };
 }

@@ -105,7 +105,7 @@ export function MainTextEditor({
     stringHandler: 'html',
   });
 
-  const onFocus = useGlobalFocus(id, manager.store);
+  const { onFocus } = useGlobalFocus(id, manager.store);
 
   return (
     <Wrap className="remirror-theme">

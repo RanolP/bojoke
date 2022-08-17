@@ -33,7 +33,7 @@ function UnstyledNumericInput({
 
   const readonly = useLocked();
 
-  const onFocus = useGlobalFocus(id);
+  const { onFocus } = useGlobalFocus(id);
 
   function onInput(e: JSX.TargetedEvent<HTMLInputElement>) {
     setValue(e.currentTarget.value);

@@ -11,7 +11,8 @@ import { Headline } from './system/Headline';
 import { MainTextEditor } from './system/MainTextEditor';
 import { useState } from 'preact/hooks';
 import { useLocked } from './hooks/useLocked';
-import { AddExampleButton } from './system/AddExampleButton';
+import { AddSampleButton } from './system/AddSampleButton';
+import { SampleEditor } from './system/SampleEditor';
 
 const TotalWrap = styled('div', {
   margin: '0 auto',
@@ -69,8 +70,8 @@ export function App() {
             id="main-text/output"
             initialContent="첫째 줄에 A+B를 출력한다."
           />
-          {!readonly && <AddExampleButton />}
-          <p>여기에 예제 넣어주세요 감사합니다</p>
+          {!readonly && <AddSampleButton />}
+          <SampleEditor sampleId={1} />
           <Headline>힌트/노트</Headline>
           <MainTextEditor
             id="main-text/example"

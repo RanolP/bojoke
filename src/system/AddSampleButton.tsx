@@ -1,5 +1,6 @@
-import { styled } from '@stitches/react';
+
 import { FaPlus } from 'react-icons/fa';
+import { styled } from '../stitches.config';
 
 const StyledButton = styled('button', {
   border: 'none',
@@ -20,13 +21,13 @@ const StyledButton = styled('button', {
   },
   '&:active': {
     background: '#a2a2f2',
-  }
+  },
 });
 const StyledFaPlus = styled(FaPlus, {
   marginRight: '0.3rem',
-})
+});
 
-export function AddExampleButton(): JSX.Element {
+export function AddSampleButton(): JSX.Element {
   return (
     <StyledButton>
       <StyledFaPlus />

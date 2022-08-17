@@ -70,7 +70,7 @@ export function ProblemTitleEditor(): JSX.Element {
     stringHandler: 'html',
   });
 
-  const onFocus = useGlobalFocus('title', manager.store);
+  const { onFocus } = useGlobalFocus('title', manager.store);
 
   return (
     <Heading className="remirror-theme">

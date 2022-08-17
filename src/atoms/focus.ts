@@ -13,6 +13,8 @@ export type Focus =
   | 'info/memory-limit'
   | 'info/submission-count'
   | 'info/submission-ac-count'
-  | 'info/user-ac-count';
+  | 'info/user-ac-count'
+  | `sample/${number}/in`
+  | `sample/${number}/out`;
 
 export const focusAtom = atom<Focus>(null);

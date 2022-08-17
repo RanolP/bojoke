@@ -113,7 +113,7 @@ export function SolvedAcTierSelect(): JSX.Element {
     tierId,
   )}.svg`;
 
-  const onFocus = useGlobalFocus('tier');
+  const { onFocus } = useGlobalFocus('tier');
 
   function onInput(e: JSX.TargetedEvent<HTMLSelectElement>) {
     setTierId(Number(e.currentTarget.value));

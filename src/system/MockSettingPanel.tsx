@@ -65,7 +65,27 @@ export function MockSettingPanel(): JSX.Element {
   return (
     <Wrap>
       <h2>BOJoke</h2>
-      환영합니다! BOJoke는 백준 문제를 WYSIWIG 형식으로 만들 수 있는 도구입니다.
+      환영합니다! BOJoke는 Baekjoon Online Judge 같은 문제를 WYSIWIG 형식으로
+      만들 수 있는 도구로, 다음과 같은 정보를 수정하실 수 있습니다.
+      <ul>
+        <li>문제 번호</li>
+        <li> 문제 제목</li>
+        <li> solved.ac 티어</li>
+        <li>문제 제한 및 통계</li>
+        <li>문제 본문 설명</li>
+        <li>입출력 설명</li>
+        <li>예제 (TODO)</li>
+        <li>힌트/노트</li>
+      </ul>
+      <br />
+      <small>
+        *스타트링크의 인가를 받지 않은 프로젝트입니다. <br />
+        *본 프로젝트를 사용해 만든 문제로 발생한 사건의 책임은 사용자에게
+        있습니다. <br />
+        *solved.ac는 shiftpsh.com의 상표입니다.
+        <br />
+        *Baekjoon Online Judge는 주식회사 스타트링크의 상표입니다.
+      </small>
       <hr />
       <h2>설정</h2>
       <form>
