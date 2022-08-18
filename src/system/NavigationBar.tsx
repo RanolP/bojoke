@@ -1,6 +1,7 @@
-import { useAtomValue } from 'jotai';
+import { useAtom, useAtomValue } from 'jotai';
 import { useState } from 'preact/hooks';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { infoAtom } from '../atoms/info';
 import { debugAtom, loginAtom, solvedAtom } from '../atoms/problem-meta';
 import { styled } from '../stitches.config';
 import { NumericInput } from './NumericInput';
@@ -46,7 +47,7 @@ const Caret = styled('b', {
 });
 
 export function NavigationBar(): JSX.Element {
-  const [id, setId] = useState('10386');
+  const [info, dispatch] = useAtom(infoAtom);
 
   const hasLogined = useAtomValue(loginAtom);
   const hasSolved = useAtomValue(solvedAtom);
@@ -58,8 +59,11 @@ export function NavigationBar(): JSX.Element {
         <li className="active">
           <NumericInput
             id="problem-id"
-            value={id}
-            setValue={setId}
+            value={info.problemId}
+            setValue={(value) =>
+              dispatch({ type: 'SET_PROBLEM_ID', value })
+            }
+            placeholder="1000"
             context="problem-id"
             pattern="(0|[1-9][0-9]*)"
           />

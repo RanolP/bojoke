@@ -59,24 +59,24 @@ export function App() {
           <Headline>문제</Headline>
           <MainTextEditor
             id="main-text/description"
-            initialContent="두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오."
+            placeholder="두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오."
           />
           <Headline>입력</Headline>
           <MainTextEditor
             id="main-text/input"
-            initialContent="첫째 줄에 A와 B가 주어진다. (0 < A, B < 10)"
+            placeholder="첫째 줄에 A와 B가 주어진다. (0 < A, B < 10)"
           />
           <Headline>출력</Headline>
           <MainTextEditor
             id="main-text/output"
-            initialContent="첫째 줄에 A+B를 출력한다."
+            placeholder="첫째 줄에 A+B를 출력한다."
           />
           {!readonly && <AddSampleButton />}
           <SampleEditor sampleId={1} />
           <Headline>힌트/노트</Headline>
           <MainTextEditor
             id="main-text/example"
-            initialContent="여기를 누르면 1000번 예제 소스를 볼 수 있습니다."
+            placeholder="여기를 누르면 1000번 예제 소스를 볼 수 있습니다."
           />
           <Headline>출처</Headline>
           <p>이건 또 어떻게 넣냐</p>

@@ -24,7 +24,13 @@ export function ProblemInfoTable(): JSX.Element {
   const [info, dispatch] = useAtom(infoAtom);
 
   function setter(
-    type: Exclude<Parameters<typeof dispatch>[0]['type'], 'FULL_UPDATE'>,
+    type:
+      | 'SET_TIME_LIMIT'
+      | 'SET_MEMORY_LIMIT'
+      | 'SET_SUBMISSION_COUNT'
+      | 'SET_SUBMISSION_AC_COUNT'
+      | 'SET_USER_AC_COUNT'
+      | 'SET_AC_PERCENTAGE',
   ) {
     return (value: string) => dispatch({ type, value });
   }

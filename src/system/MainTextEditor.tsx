@@ -28,6 +28,7 @@ import {
 import { Focus } from '../atoms/focus';
 import { useGlobalFocus } from '../hooks/use-global-focus';
 import { useLocked } from '../hooks/useLocked';
+import { RemirrorContent } from '../lib/vendors/remirror/content';
 import { MathInlineExtension } from '../lib/vendors/remirror/extension-math/math-inline-extension';
 import { MathSelectExtension } from '../lib/vendors/remirror/extension-math/math-select-extension';
 import { css, styled } from '../stitches.config';
@@ -62,12 +63,12 @@ const EditableIcon = styled(FiEdit3, {
 
 export interface MainTextEditorProps {
   id: Focus;
-  initialContent: RemirrorContentType<Schema<string, string>>;
+  placeholder: RemirrorContent;
 }
 
 export function MainTextEditor({
   id,
-  initialContent,
+  placeholder,
 }: MainTextEditorProps): JSX.Element {
   const readonly = useLocked();
 
@@ -75,6 +76,8 @@ export function MainTextEditor({
   const { manager, state } = useRemirror({
     extensions: () =>
       [
+        new PlaceholderExtension({ placeholder }),
+
         new BlockquoteExtension(),
         new BoldExtension(),
         new CodeBlockExtension(),
@@ -88,7 +91,6 @@ export function MainTextEditor({
         new BulletListExtension(),
         new OrderedListExtension(),
         new NodeFormattingExtension(),
-        new PlaceholderExtension(initialContent),
         new StrikeExtension(),
         new SubExtension(),
         new SupExtension(),
@@ -101,7 +103,6 @@ export function MainTextEditor({
         new MathSelectExtension(),
       ] as any,
     plugins: [mathPlugin],
-    content: initialContent,
     stringHandler: 'html',
   });
 

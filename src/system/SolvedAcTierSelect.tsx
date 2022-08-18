@@ -104,7 +104,7 @@ const TierOption = styled('option', {
 export function SolvedAcTierSelect(): JSX.Element {
   const readonly = useLocked();
 
-  const [tierId, setTierId] = useState(15);
+  const [tierId, setTierId] = useState(1);
 
   const index = tierId + 1;
   const [tier, label] = TiersLeveledList[index];

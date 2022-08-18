@@ -18,18 +18,19 @@ export function useGlobalFocus(id: Focus, store?: AnyManagerStore) {
   const hasFocus = focus === id;
 
   const onFocus = useCallback(() => setFocus(id), []);
+  const blur = useCallback(() => {
+    if (focusRef.current === id) {
+      setFocus(null);
+    }
+  }, [id]);
 
   const focusRef = useRef<Focus>(null);
   useEffect(() => {
     focusRef.current = focus;
   }, [focus]);
   useEffect(() => {
-    return () => {
-      if (focusRef.current === id) {
-        setFocus(null);
-      }
-    };
+    return blur;
   }, []);
 
-  return { hasFocus, onFocus };
+  return { hasFocus, onFocus, blur };
 }

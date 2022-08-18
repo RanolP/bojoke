@@ -1,8 +1,11 @@
-import { atom } from 'jotai';
 import { atomWithReducer } from 'jotai/utils';
 import { BojokeDocument } from '../lib/bojoke-document';
 
 type Action =
+  | {
+      type: 'SET_PROBLEM_ID';
+      value: string;
+    }
   | {
       type: 'SET_TIME_LIMIT';
       value: string;
@@ -37,6 +40,11 @@ function reducer(
   action: Action,
 ): BojokeDocument['info'] {
   switch (action.type) {
+    case 'SET_PROBLEM_ID':
+      return {
+        ...state,
+        problemId: action.value,
+      };
     case 'SET_TIME_LIMIT':
       return {
         ...state,
@@ -91,6 +99,7 @@ function reducer(
 
 export const infoAtom = atomWithReducer(
   {
+    problemId: '1000',
     timeLimit: {
       content: '3',
     },

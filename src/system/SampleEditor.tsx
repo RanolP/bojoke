@@ -57,15 +57,27 @@ const StyledTextarea = styled('textarea', {
   whiteSpace: 'pre',
 
   overflowY: 'visible',
+
+  '&::placeholder': {
+    fontStyle: 'italic',
+    opacity: 0.25,
+  },
 });
 
-interface GracefulTextareaProps {
+interface GracefulTextareaProps
+  extends Omit<
+    JSX.HTMLAttributes<HTMLTextAreaElement>,
+    'value' | 'onInput' | 'readOnly' | 'onFocus' | 'ref'
+  > {
   focus: Focus;
 }
-function GracefulTextarea({ focus }: GracefulTextareaProps): JSX.Element {
+function GracefulTextarea({
+  focus,
+  ...props
+}: GracefulTextareaProps): JSX.Element {
   const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
   const [text, setText] = useState('');
-  const { hasFocus, onFocus } = useGlobalFocus(focus);
+  const { hasFocus, onFocus, blur } = useGlobalFocus(focus);
   const readonly = useLocked();
 
   function onInput(e: JSX.TargetedEvent<HTMLTextAreaElement>) {
@@ -87,7 +99,9 @@ function GracefulTextarea({ focus }: GracefulTextareaProps): JSX.Element {
         onInput={onInput}
         readOnly={readonly}
         onFocus={onFocus}
+        onBlur={blur}
         ref={textAreaRef}
+        {...props}
       />
     </StyledPre>
   );
@@ -128,12 +142,15 @@ export function SampleEditor({ sampleId }: SampleEditorProps): JSX.Element {
         {hasInput && (
           <SectionWrap>
             <Headline>예제 입력 {sampleId}</Headline>
-            <GracefulTextarea focus={`sample/${sampleId}/in`} />
+            <GracefulTextarea
+              focus={`sample/${sampleId}/in`}
+              placeholder="1 2"
+            />
           </SectionWrap>
         )}
         <SectionWrap>
           <Headline>예제 출력 {sampleId}</Headline>
-          <GracefulTextarea focus={`sample/${sampleId}/out`} />
+          <GracefulTextarea focus={`sample/${sampleId}/out`} placeholder="3" />
         </SectionWrap>
       </Wrap>
     </>
