@@ -11,4 +11,28 @@ export default defineConfig({
     }),
   ],
   base: '/bojoke/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          remirror: [
+            '@remirror/core',
+            '@remirror/pm',
+            '@remirror/react',
+            'remirror',
+          ],
+          prosemirror: [
+            '@benrbray/prosemirror-math',
+            'prosemirror-commands',
+            'prosemirror-inputrules',
+            'prosemirror-keymap',
+            'prosemirror-model',
+            'prosemirror-state',
+            'prosemirror-transform',
+            'prosemirror-view',
+          ],
+        },
+      },
+    },
+  },
 });
