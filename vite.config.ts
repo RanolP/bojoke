@@ -15,13 +15,14 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          remirror: [
+          editor: [
+            // remirror
             '@remirror/core',
             '@remirror/pm',
             '@remirror/react',
             'remirror',
-          ],
-          prosemirror: [
+
+            // prosemirror
             '@benrbray/prosemirror-math',
             'prosemirror-commands',
             'prosemirror-inputrules',
