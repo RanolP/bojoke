@@ -14,6 +14,7 @@ export type Focus =
   | 'info/submission-count'
   | 'info/submission-ac-count'
   | 'info/user-ac-count'
+  | 'info/ac-percentage'
   | `sample/${number}/in`
   | `sample/${number}/out`;
 

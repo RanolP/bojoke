@@ -2,6 +2,7 @@ import { SetStateAction, useAtom, WritableAtom } from 'jotai';
 import { useState } from 'preact/hooks';
 import { lockAtom } from '../atoms/lock';
 import { debugAtom, loginAtom, solvedAtom } from '../atoms/problem-meta';
+import { useBojokeDocument } from '../hooks/use-bojoke-document';
 import { styled } from '../stitches.config';
 
 const Wrap = styled('div', {
@@ -62,6 +63,8 @@ function Checkbox({ atom, ...props }: CheckboxProps) {
 }
 
 export function MockSettingPanel(): JSX.Element {
+  const [document] = useBojokeDocument();
+
   return (
     <Wrap>
       <h2>BOJoke</h2>
@@ -117,6 +120,7 @@ export function MockSettingPanel(): JSX.Element {
           </FieldWrap>
         </FieldGroup>
       </form>
+      <button onClick={() => console.log(document)}>콘솔에 덤프</button>
     </Wrap>
   );
 }

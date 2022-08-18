@@ -46,14 +46,17 @@ const EditableIcon = styled(FiEdit3, {
 
 export function ProblemTitleEditor(): JSX.Element {
   const readonly = useLocked();
-  const { manager, state } = useRemirror({
+  const { manager, state, setState } = useRemirror({
     extensions: () =>
       [
         new MathInlineExtension(),
         new MathSelectExtension(),
-        new PlaceholderExtension('A+B'),
+        new PlaceholderExtension({
+          placeholder: 'A+B',
+        }),
       ] as any,
     plugins: [mathPlugin],
+    /*
     content: {
       type: 'paragraph',
       content: [
@@ -68,6 +71,7 @@ export function ProblemTitleEditor(): JSX.Element {
         },
       ],
     },
+    */
     stringHandler: 'html',
   });
 
@@ -79,7 +83,8 @@ export function ProblemTitleEditor(): JSX.Element {
       <Remirror
         classNames={[Editor()]}
         manager={manager}
-        initialContent={state}
+        state={state}
+        onChange={({ state: newState }) => setState(newState)}
         onFocus={onFocus}
         editable={!readonly}
       />

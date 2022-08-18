@@ -13,6 +13,7 @@ import { useState } from 'preact/hooks';
 import { useLocked } from './hooks/useLocked';
 import { AddSampleButton } from './system/AddSampleButton';
 import { SampleEditor } from './system/SampleEditor';
+import { useBojokeDocument } from './hooks/use-bojoke-document';
 
 const TotalWrap = styled('div', {
   margin: '0 auto',

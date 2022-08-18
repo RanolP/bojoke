@@ -1,4 +1,7 @@
-import { useState } from 'preact/hooks';
+import { useAtom } from 'jotai';
+import { selectAtom, useReducerAtom } from 'jotai/utils';
+import { useMemo, useState } from 'preact/hooks';
+import { infoAtom } from '../atoms/info';
 import { styled } from '../stitches.config';
 import { NumericInput } from './NumericInput';
 
@@ -18,12 +21,11 @@ const Table = styled('table', {
 });
 
 export function ProblemInfoTable(): JSX.Element {
-  const [timeLimit, setTimeLimit] = useState('3');
-  const [memoryLimit, setMemoryLimit] = useState('256');
-  const [submissionCount, setSubmissionCount] = useState('219');
-  const [submissionAcCount, setSubmissionAcCount] = useState('40');
-  const [userAcCount, setUserAcCount] = useState('37');
-  const [acPercentage, setAcPercentage] = useState('21.893');
+  const [info, dispatch] = useAtom(infoAtom);
+
+  function setter(type: Parameters<typeof dispatch>[0]['type']) {
+    return (value: string) => dispatch({ type, value });
+  }
 
   return (
     <Table>
@@ -42,57 +44,57 @@ export function ProblemInfoTable(): JSX.Element {
           <td>
             <NumericInput
               id="info/time-limit"
-              value={timeLimit}
+              value={info.timeLimit.content}
               pattern="-?(0|[1-9][0-9]*)(\.[0-9]*[1-9])?"
               title="부호 있는 정수 혹은 실수, 소수점은 간결하게 적음"
-              setValue={setTimeLimit}
+              setValue={setter('SET_TIME_LIMIT')}
             />{' '}
             초
           </td>
           <td>
             <NumericInput
               id="info/memory-limit"
-              value={memoryLimit}
+              value={info.memoryLimit.content}
               pattern="(0|[1-9][0-9]*)"
               title="음이 아닌 정수"
-              setValue={setMemoryLimit}
+              setValue={setter('SET_MEMORY_LIMIT')}
             />{' '}
             MB
           </td>
           <td>
             <NumericInput
               id="info/submission-count"
-              value={submissionCount}
+              value={info.submissionCount}
               pattern="(0|[1-9][0-9]*)"
               title="음이 아닌 정수"
-              setValue={setSubmissionCount}
+              setValue={setter('SET_SUBMISSION_COUNT')}
             />
           </td>
           <td>
             <NumericInput
-              id="info/submission-count"
-              value={submissionAcCount}
+              id="info/submission-ac-count"
+              value={info.submissionAcCount}
               pattern="(0|[1-9][0-9]*)"
               title="음이 아닌 정수"
-              setValue={setSubmissionAcCount}
+              setValue={setter('SET_SUBMISSION_AC_COUNT')}
             />
           </td>
           <td>
             <NumericInput
-              id="info/submission-count"
-              value={userAcCount}
+              id="info/user-ac-count"
+              value={info.userAcCount}
               pattern="(0|[1-9][0-9]*)"
               title="음이 아닌 정수"
-              setValue={setUserAcCount}
+              setValue={setter('SET_USER_AC_COUNT')}
             />
           </td>
           <td>
             <NumericInput
-              id="info/submission-count"
-              value={acPercentage}
+              id="info/ac-percentage"
+              value={info.acPercentage}
               pattern="((0|[1-9][0-9]{0,1})\.[0-9]{3}|100.000)"
               title="0 ~ 100 사이 백분율, 소수점 3자리까지 표시"
-              setValue={setAcPercentage}
+              setValue={setter('SET_AC_PERCENTAGE')}
             />
             %
           </td>
