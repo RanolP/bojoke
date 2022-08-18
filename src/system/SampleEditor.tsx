@@ -81,7 +81,7 @@ function GracefulTextarea({ focus }: GracefulTextareaProps): JSX.Element {
   }, [text]);
 
   return (
-    <StyledPre data-focus={hasFocus}>
+    <StyledPre data-focus={!readonly && hasFocus}>
       <StyledTextarea
         value={text}
         onInput={onInput}
