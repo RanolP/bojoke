@@ -23,7 +23,9 @@ const Table = styled('table', {
 export function ProblemInfoTable(): JSX.Element {
   const [info, dispatch] = useAtom(infoAtom);
 
-  function setter(type: Parameters<typeof dispatch>[0]['type']) {
+  function setter(
+    type: Exclude<Parameters<typeof dispatch>[0]['type'], 'FULL_UPDATE'>,
+  ) {
     return (value: string) => dispatch({ type, value });
   }
 
