@@ -63,7 +63,7 @@ function Checkbox({ atom, ...props }: CheckboxProps) {
 }
 
 export function MockSettingPanel(): JSX.Element {
-  const [document] = useBojokeDocument();
+  const { readDocument } = useBojokeDocument();
 
   return (
     <Wrap>
@@ -120,7 +120,7 @@ export function MockSettingPanel(): JSX.Element {
           </FieldWrap>
         </FieldGroup>
       </form>
-      <button onClick={() => console.log(document)}>콘솔에 덤프</button>
+      <button onClick={() => console.log(readDocument())}>콘솔에 덤프</button>
     </Wrap>
   );
 }

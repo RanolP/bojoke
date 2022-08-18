@@ -1,8 +1,11 @@
 import { mathPlugin, mathSelectPlugin } from '@benrbray/prosemirror-math';
-import { AnyExtension } from '@remirror/core';
+import { AnyExtension, RemirrorManager } from '@remirror/core';
 import { Remirror, useRemirror } from '@remirror/react';
+import { useUpdateAtom } from 'jotai/utils';
+import { useEffect } from 'preact/hooks';
 import { FiEdit3 } from 'react-icons/fi';
 import { PlaceholderExtension } from 'remirror/extensions';
+import { problemTitleAtom } from '../atoms/remirror-editor';
 import { useGlobalFocus } from '../hooks/use-global-focus';
 import { useLocked } from '../hooks/useLocked';
 import { MathInlineExtension } from '../lib/vendors/remirror/extension-math/math-inline-extension';
@@ -74,6 +77,10 @@ export function ProblemTitleEditor(): JSX.Element {
     */
     stringHandler: 'html',
   });
+  const setProblemTitleManager = useUpdateAtom(problemTitleAtom);
+  useEffect(() => {
+    setProblemTitleManager(manager as any);
+  }, [manager]);
 
   const { onFocus } = useGlobalFocus('title', manager.store);
 
@@ -83,8 +90,7 @@ export function ProblemTitleEditor(): JSX.Element {
       <Remirror
         classNames={[Editor()]}
         manager={manager}
-        state={state}
-        onChange={({ state: newState }) => setState(newState)}
+        initialContent={state}
         onFocus={onFocus}
         editable={!readonly}
       />

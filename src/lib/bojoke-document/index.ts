@@ -1,3 +1,5 @@
+import { RemirrorContent } from '../vendors/remirror/content';
+
 export interface BojokeDocument {
   info: {
     timeLimit: {
@@ -11,4 +13,5 @@ export interface BojokeDocument {
     userAcCount: string;
     acPercentage: string;
   };
+  title: RemirrorContent;
 }

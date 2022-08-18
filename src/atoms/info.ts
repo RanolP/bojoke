@@ -26,6 +26,10 @@ type Action =
   | {
       type: 'SET_AC_PERCENTAGE';
       value: string;
+    }
+  | {
+      type: 'FULL_UPDATE';
+      value: Partial<BojokeDocument['info']> | undefined;
     };
 
 function reducer(
@@ -68,6 +72,19 @@ function reducer(
       return {
         ...state,
         acPercentage: action.value,
+      };
+    case 'FULL_UPDATE':
+      return {
+        ...state,
+        ...(action.value ?? {}),
+        timeLimit: {
+          ...state.timeLimit,
+          ...(action.value?.timeLimit ?? {}),
+        },
+        memoryLimit: {
+          ...state.memoryLimit,
+          ...(action.value?.memoryLimit ?? {}),
+        },
       };
   }
 }
