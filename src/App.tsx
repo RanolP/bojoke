@@ -9,11 +9,9 @@ import { SolvedAcTierSelect } from './system/SolvedAcTierSelect';
 import { ProblemInfoTable } from './system/ProblemInfoTable';
 import { Headline } from './system/Headline';
 import { MainTextEditor } from './system/MainTextEditor';
-import { useState } from 'preact/hooks';
 import { useLocked } from './hooks/use-locked';
 import { AddSampleButton } from './system/AddSampleButton';
 import { SampleEditor } from './system/SampleEditor';
-import { useBojokeDocument } from './hooks/use-bojoke-document';
 
 const TotalWrap = styled('div', {
   margin: '0 auto',

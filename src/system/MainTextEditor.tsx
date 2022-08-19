@@ -20,6 +20,7 @@ import {
   NodeFormattingExtension,
   OrderedListExtension,
   PlaceholderExtension,
+  PositionerExtension,
   StrikeExtension,
   SubExtension,
   SupExtension,
@@ -80,6 +81,7 @@ export function MainTextEditor({
     extensions: () =>
       [
         new PlaceholderExtension({ placeholder }),
+        new PositionerExtension(),
 
         new BlockquoteExtension(),
         new BoldExtension(),
