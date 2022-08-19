@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'preact/hooks';
 import { Focus } from '../atoms/focus';
 import { useGlobalFocus } from '../hooks/use-global-focus';
-import { useLocked } from '../hooks/useLocked';
+import { useLocked } from '../hooks/use-locked';
 import { styled } from '../stitches.config';
 
 const HiddenSpan = styled('span', {

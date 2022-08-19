@@ -1,7 +1,7 @@
 import { CSS } from '@stitches/react';
 import { useState } from 'preact/hooks';
 import { useGlobalFocus } from '../hooks/use-global-focus';
-import { useLocked } from '../hooks/useLocked';
+import { useLocked } from '../hooks/use-locked';
 import { styled } from '../stitches.config';
 
 const Wrap = styled('blockquote', {

@@ -2,6 +2,8 @@ import { mathPlugin } from '@benrbray/prosemirror-math';
 import { RemirrorContentType } from '@remirror/core';
 import { Schema } from '@remirror/pm/model';
 import { useRemirror, Remirror } from '@remirror/react';
+import { useUpdateAtom } from 'jotai/utils';
+import { useEffect, useMemo } from 'preact/hooks';
 import { FiEdit2, FiEdit3 } from 'react-icons/fi';
 import {
   BlockquoteExtension,
@@ -26,8 +28,9 @@ import {
   UnderlineExtension,
 } from 'remirror/extensions';
 import { Focus } from '../atoms/focus';
+import { EditorManagerId, remirrorEditorManagerFamily } from '../atoms/remirror-editor';
 import { useGlobalFocus } from '../hooks/use-global-focus';
-import { useLocked } from '../hooks/useLocked';
+import { useLocked } from '../hooks/use-locked';
 import { RemirrorContent } from '../lib/vendors/remirror/content';
 import { MathInlineExtension } from '../lib/vendors/remirror/extension-math/math-inline-extension';
 import { MathSelectExtension } from '../lib/vendors/remirror/extension-math/math-select-extension';
@@ -62,7 +65,7 @@ const EditableIcon = styled(FiEdit3, {
 });
 
 export interface MainTextEditorProps {
-  id: Focus;
+  id: Focus & EditorManagerId;
   placeholder: RemirrorContent;
 }
 
@@ -107,6 +110,13 @@ export function MainTextEditor({
   });
 
   const { onFocus } = useGlobalFocus(id, manager.store);
+
+  const managerAtom = useMemo(() => remirrorEditorManagerFamily(id), [id]);  
+  const setProblemTitleManager = useUpdateAtom(managerAtom);
+  useEffect(() => {
+    setProblemTitleManager(manager as any);
+  }, [manager]);
+
 
   return (
     <Wrap className="remirror-theme">

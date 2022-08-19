@@ -1,6 +1,8 @@
+import { EditorManagerId } from '../../atoms/remirror-editor';
 import { RemirrorContent } from '../vendors/remirror/content';
 
-export interface BojokeDocument {
+export interface BojokeDocument
+  extends Record<EditorManagerId, RemirrorContent[]> {
   info: {
     problemId: string;
 
@@ -16,5 +18,4 @@ export interface BojokeDocument {
     userAcCount: string;
     acPercentage: string;
   };
-  title: RemirrorContent[];
 }

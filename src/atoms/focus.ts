@@ -2,7 +2,7 @@ import { atom } from 'jotai';
 
 export type Focus =
   | null
-  | 'title'
+  | 'problem-title'
   | 'problem-id'
   | 'tier'
   | 'main-text/description'

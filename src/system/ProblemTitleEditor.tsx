@@ -7,7 +7,7 @@ import { FiEdit3 } from 'react-icons/fi';
 import { PlaceholderExtension } from 'remirror/extensions';
 import { problemTitleAtom } from '../atoms/remirror-editor';
 import { useGlobalFocus } from '../hooks/use-global-focus';
-import { useLocked } from '../hooks/useLocked';
+import { useLocked } from '../hooks/use-locked';
 import { MathInlineExtension } from '../lib/vendors/remirror/extension-math/math-inline-extension';
 import { MathSelectExtension } from '../lib/vendors/remirror/extension-math/math-select-extension';
 import { css, styled } from '../stitches.config';
@@ -82,7 +82,7 @@ export function ProblemTitleEditor(): JSX.Element {
     setProblemTitleManager(manager as any);
   }, [manager]);
 
-  const { onFocus } = useGlobalFocus('title', manager.store);
+  const { onFocus } = useGlobalFocus('problem-title', manager.store);
 
   return (
     <Heading className="remirror-theme">

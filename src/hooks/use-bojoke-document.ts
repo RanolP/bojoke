@@ -1,7 +1,12 @@
 import { AnyRemirrorManager } from '@remirror/core';
-import { useAtom, useAtomValue } from 'jotai';
+import { PrimitiveAtom, useAtom, useAtomValue } from 'jotai';
+import { useUpdateAtom } from 'jotai/utils';
 import { infoAtom } from '../atoms/info';
-import { problemTitleAtom } from '../atoms/remirror-editor';
+import {
+  EditorManagerId,
+  problemTitleAtom,
+  remirrorEditorManagerFamily,
+} from '../atoms/remirror-editor';
 import { BojokeDocument } from '../lib/bojoke-document';
 import { RemirrorContent } from '../lib/vendors/remirror/content';
 
@@ -15,7 +20,7 @@ function saveContents(
 }
 
 function loadContents(
-  manager: AnyRemirrorManager | null,
+  manager: AnyRemirrorManager | null | undefined,
   value: RemirrorContent[] | null,
 ) {
   if (!manager) {
@@ -31,20 +36,33 @@ function loadContents(
   });
 }
 
+const atoms = Object.values(EditorManagerId).map(
+  (id) => [id, remirrorEditorManagerFamily(id)] as const,
+);
+
 export function useBojokeDocument(): {
   readDocument: () => BojokeDocument;
   loadDocument: (document: BojokeDocument) => void;
 } {
   const [info, dispatch] = useAtom(infoAtom);
   const problemTitleManager = useAtomValue(problemTitleAtom);
+  const managers = atoms.map(([id, atom]) => [id, useAtomValue(atom)] as const);
 
   return {
     readDocument() {
-      return { info, title: saveContents(problemTitleManager) };
+      return {
+        info,
+        ...(Object.fromEntries(
+          managers.map(([id, manager]) => [id, saveContents(manager)]),
+        ) as Record<EditorManagerId, RemirrorContent>),
+      };
     },
     loadDocument(document: BojokeDocument) {
       dispatch({ type: 'FULL_UPDATE', value: document.info });
-      loadContents(problemTitleManager, document.title);
+      for (const id of Object.values(EditorManagerId)) {
+        const manager = managers.find(([managerId]) => id === managerId);
+        loadContents(manager?.[1], document[id]);
+      }
     },
   };
 }
