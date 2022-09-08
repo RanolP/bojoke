@@ -108,10 +108,7 @@ export function SolvedAcTierSelect(): JSX.Element {
 
   const index = tierId + 1;
   const [tier, label] = TiersLeveledList[index];
-  const tierImage = `https://static.solved.ac/tier_small/${Math.max(
-    0,
-    tierId,
-  )}.svg`;
+  const tierImage = `https://static.solved.ac/tier_small/${tierId === -1 ? 'nr' : tierId}.svg`;
 
   const { onFocus } = useGlobalFocus('tier');
 
